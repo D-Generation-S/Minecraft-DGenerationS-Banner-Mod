@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    " g ",
+    "d s"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:iron_ingot"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    },
+    "s": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "dgenerationsbannermod:dgenerations",
+    "count": 1
+  }
+}
