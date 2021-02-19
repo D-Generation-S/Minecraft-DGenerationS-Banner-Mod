@@ -1,0 +1,33 @@
+modLoader="javafml"
+loaderVersion="[36,)" 
+license="MIT License"
+issueTrackerURL="https://github.com/D-Generation-S/Minecraft-DGenerationS-Banner-Mod/issues" #optional
+[[mods]]
+modId="dgenerationsbannermod" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="D-Generation S Banner Mod"
+#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+#displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
+logoFile="logo.png"
+credits="Special thanks to https://github.com/Darkhax-Minecraft for creating the bookshelf api" #optional
+authors="XanatosX"
+description='''
+A mod adding some banner patterns for the D-Generation S Team. Feel free to use this if you wish'''
+[[dependencies.dgenerationsbannermod]]
+    modId="forge" #mandatory
+    mandatory=true #mandatory
+    versionRange="[36,)" #mandatory
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dgenerationsbannermod]]
+	modId="bookshelf"
+    mandatory=true
+    versionRange="[10,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.dgenerationsbannermod]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.5,1.17)"
+    ordering="NONE"
+    side="BOTH"
