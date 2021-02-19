@@ -16,23 +16,45 @@ import org.apache.logging.log4j.Logger;
 import net.darkhax.bookshelf.item.ItemGroupBase;
 import net.darkhax.bookshelf.registry.RegistryHelper;
 
+/**
+ * The main entry point for this mod
+ * This will register all the banners
+ */
 @Mod(DGenerationBannerMod.MODID)
 public class DGenerationBannerMod {
+	/**
+	 * Name of the mod
+	 */
 	public static final String MODID = "dgenerationsbannermod";
 	
-	private final Logger log;  
+	/**
+	 * The logger to use
+	 */
+	public final Logger log;
+	
+	/**
+	 * The item tab group to use
+	 */
     private final ItemGroup tab;
+    
+    /**
+     * Registry helper for this mod
+     */
     private final RegistryHelper registry;
     
-    
+    /**
+     * DGeneration-S Banner
+     */
     public final BannerPattern dGenerationS;
+    
+    /**
+     * Xanatos Banner
+     */
     public final BannerPattern xanatos;
 	
-    //private final ItemGroup tab;
-    //private final RegistryHelper registry;
-	
-	//this.registry = new RegistryHelper(MOD_ID, log).withItemGroup(tab);
-	
+    /**
+     * Create a new instance of this class
+     */
 	public DGenerationBannerMod() {
 		this.log = LogManager.getLogger(MODID);  
 		this.tab = new ItemGroupBase(MODID, Items.MOJANG_BANNER_PATTERN);
@@ -40,11 +62,16 @@ public class DGenerationBannerMod {
 		
 		this.dGenerationS = this.registry.banners.registerItemPattern("dgenerations", Rarity.EPIC);
 		this.xanatos = this.registry.banners.registerItemPattern("xanatos", Rarity.EPIC);
-        this.addRareTrade(this.xanatos);
+		this.addBasicTrade();
+        this.addRareTrade(this.xanatos, this.dGenerationS);
 		
 		this.registry.initialize(FMLJavaModLoadingContext.get().getModEventBus());
 	}
 	
+	/**
+	 * Add items for basic trading
+	 * @param patterns All the items to add
+	 */
 	private void addBasicTrade(BannerPattern... patterns) {
     	
     	for (BannerPattern pattern : patterns) {
@@ -53,6 +80,10 @@ public class DGenerationBannerMod {
     	}
     }
     
+	/**
+	 * Add a single item for basic trading
+	 * @param pattern The pattern to add
+	 */
     private void addBasicTrade(BannerPattern pattern) {
     	
     	final Item item = this.registry.banners.getStencilItem(pattern);
@@ -68,6 +99,10 @@ public class DGenerationBannerMod {
     	}
     }
     
+    /**
+     * Add items for rare trading
+     * @param patterns The patterns to add for rare trading
+     */
     private void addRareTrade(BannerPattern... patterns) {
     	
     	for (BannerPattern pattern : patterns) {
@@ -76,6 +111,10 @@ public class DGenerationBannerMod {
     	}
     }
     
+    /**
+     * Add item for rare trading
+     * @param pattern The pattern to add for trading
+     */
     private void addRareTrade(BannerPattern pattern) {
     	
     	final Item item = this.registry.banners.getStencilItem(pattern);
