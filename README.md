@@ -3,7 +3,7 @@
 This mod adds some banner patterns designed and related to D-Generation S
 ## Special Thanks
 
-Special thanks to [Darkhax] for creating [Bookshelf] really easy!
+Special thanks to [Darkhax] for creating [Bookshelf] it makes the registering of the banners really easy!
 ## Requirements
 The following mods must be installed:
 
